@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">MyPortfolio</div>
+
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-wrapper">
+
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Baby Jane De Asis</span></h1>
+                <h2>Professional Web Developer</h2>
+
+                <p>
+                    I specialize in creating robust, scalable web applications with clean code and modern technologies.
+                    Focused on delivering high-performance solutions that drive business results.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Hire Me
+                    </a>
+                    <a href="project.html" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i> View Projects
+                    </a>
+                </div>
+            </div>
+
+    </div>
+</section>
+
+<!-- QUICK SKILLS PREVIEW -->
+<section class="home-skills">
+    <div class="container">
+        <h2>My Skills</h2>
+
+        <div class="skills-preview">
+            <div class="skill-box">HTML5</div>
+            <div class="skill-box">CSS3</div>
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">PHP</div>
+            <div class="skill-box">React</div>
+            <div class="skill-box">Node.js</div>
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+    <div class="container">
+        <h2>Ready to build your next project?</h2>
+        <a href="contact.html" class="btn">Get In Touch</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 <span>MyPortfolio</span> | Designed with <i class="fas fa-heart" style="color: #f59e0b;"></i> by You</p>
+    </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Add scroll effect to navbar
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+    } else {
+        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+    }
+});
+</script>
+
+</body>
+</html>

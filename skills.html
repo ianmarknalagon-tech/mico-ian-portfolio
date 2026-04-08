@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">MyPortfolio</div>
+
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="skills.html" class="active">Skills</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>My Skills</h1>
+        <p>Technologies and tools I master to bring your ideas to life</p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section">
+    <div class="container">
+
+        <div class="skills-grid">
+
+            <!-- FRONTEND -->
+            <div class="skill-card">
+                <h2><i class="fas fa-code"></i> Frontend</h2>
+                <ul>
+                    <li><i class="fab fa-html5"></i> HTML5 & Semantic Markup</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS3 & Modern Layouts</li>
+                    <li><i class="fab fa-js-square"></i> JavaScript (ES6+)</li>
+                    <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
+                    <li><i class="fab fa-react"></i> React.js</li>
+                    <li><i class="fab fa-sass"></i> SASS/SCSS</li>
+                </ul>
+            </div>
+
+            <!-- BACKEND -->
+            <div class="skill-card">
+                <h2><i class="fas fa-server"></i> Backend</h2>
+                <ul>
+                    <li><i class="fab fa-php"></i> PHP & Laravel</li>
+                    <li><i class="fas fa-database"></i> MySQL & PostgreSQL</li>
+                    <li><i class="fab fa-node-js"></i> Node.js</li>
+                    <li><i class="fas fa-code-branch"></i> RESTful APIs</li>
+                    <li><i class="fab fa-python"></i> Python</li>
+                </ul>
+            </div>
+
+            <!-- TOOLS & TECH -->
+            <div class="skill-card">
+                <h2><i class="fas fa-tools"></i> Tools & Tech</h2>
+                <ul>
+                    <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                    <li><i class="fas fa-code"></i> VS Code</li>
+                    <li><i class="fab fa-figma"></i> Figma & Design</li>
+                    <li><i class="fab fa-docker"></i> Docker</li>
+                    <li><i class="fas fa-terminal"></i> Command Line</li>
+                    <li><i class="fab fa-linux"></i> Linux/Unix</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- SKILL BARS -->
+        <div class="skill-bars">
+            <h3 style="text-align: center; margin-bottom: 3rem; color: var(--text-color); font-size: 1.8rem;">Proficiency Levels</h3>
+
+            <div class="bar">
+                <p><i class="fab fa-html5"></i> HTML5</p>
+                <div class="progress"><span style="--fill-width: 95%"></span></div>
+            </div>
+
+            <div class="bar">
+                <p><i class="fab fa-css3-alt"></i> CSS3</p>
+                <div class="progress"><span style="--fill-width: 90%"></span></div>
+            </div>
+
+            <div class="bar">
+                <p><i class="fab fa-js-square"></i> JavaScript</p>
+                <div class="progress"><span style="--fill-width: 85%"></span></div>
+            </div>
+
+            <div class="bar">
+                <p><i class="fab fa-react"></i> React.js</p>
+                <div class="progress"><span style="--fill-width: 80%"></span></div>
+            </div>
+
+            <div class="bar">
+                <p><i class="fab fa-php"></i> PHP</p>
+                <div class="progress"><span style="--fill-width: 75%"></span></div>
+            </div>
+
+            <div class="bar">
+                <p><i class="fab fa-node-js"></i> Node.js</p>
+                <div class="progress"><span style="--fill-width: 70%"></span></div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 <span>MyPortfolio</span> | Designed with <i class="fas fa-heart" style="color: #f59e0b;"></i> by You</p>
+    </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// Add scroll effect to navbar
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+    } else {
+        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+    }
+});
+
+// Animate skill bars on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.progress span').forEach(bar => {
+    bar.style.animationPlayState = 'paused';
+    observer.observe(bar);
+});
+</script>
+
+</body>
+</html>
